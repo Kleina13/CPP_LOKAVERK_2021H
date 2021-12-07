@@ -8,15 +8,15 @@ using namespace std;
 
 int main()
 {
-    LED green_led(1, 5, "Green");
-    LED red_led(2, 3, "Red");
-    LED cyan_led(3, 2, "Cyan");
-    LED yellow_led(4, 6, "Yellow");
+    LED led1(1, 5, "Green");
+    LED led2(2, 3, "Red");
+    LED led3(3, 2, "Cyan");
+    LED led4(4, 6, "Yellow");
 
-    cout << green_led << endl 
-         << red_led << endl
-         << cyan_led << endl
-         << yellow_led << endl;
+    cout << led1 << endl 
+         << led2 << endl
+         << led3 << endl
+         << led4 << endl;
 
     Resistor res1(5, 4, 220);
     Resistor res2(6, 8, 1000);

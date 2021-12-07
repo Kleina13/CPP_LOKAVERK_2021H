@@ -18,14 +18,14 @@ void Capacitor::serialize(std::ostream& ostr) const
 {  
     // Ég kann ekki stærðfræði og er ekki alveg að grípa þetta enn redda þessu á morgun
     std::string unit = "F";
-    int num = 1;
-    if (this->farad < .000000001000) { unit = "pF"; num = 12; } else
-    if (this->farad < .000001000000) { unit = "nF"; num = 9;  } else
-    if (this->farad < .001000000000) { unit = "µF"; num = 6;  } else
-    if (this->farad < 1.00000000000) { unit = "mF"; num = 3;  }
+    double num = 1;
+    if (this->farad < .000000001000) { unit = "pF"; num = 1000000000000; } else
+    if (this->farad < .000001000000) { unit = "nF"; num = 1000000000;  } else
+    if (this->farad < .001000000000) { unit = "µF"; num = 1000000;  } else
+    if (this->farad < 1.00000000000) { unit = "mF"; num = 1000;  }
 
     Component::serialize(ostr);
-    ostr << ", Capacity: " << this->farad ^num << unit;
+    ostr << ", Capacity: " << this->farad * num << unit;
 }
 
 Capacitor::~Capacitor()
